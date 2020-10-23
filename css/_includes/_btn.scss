@@ -1,0 +1,31 @@
+.btn {
+  @include t-link;
+  @include t-uppercase;
+  @include font-size-reset;
+  @include u-mp0;
+  color: $white !important;
+  display: block;
+  background: $color-b5;
+  padding: 18*$em 28*$em;
+  transition: background-color $transition-properties, opacity $transition-properties;
+
+  &.btn--blue {
+    background: $color-b5;
+  }
+
+  &:hover {
+    background: $color-b4;
+    text-decoration: none;
+  }
+
+  &:active {
+    opacity: .66;
+    transition-duration: 0s;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .btn {
+    padding: 16*$em 20*$em;
+  }
+}

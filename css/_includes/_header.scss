@@ -1,0 +1,257 @@
+.header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.12),
+              0 0 13px 2px rgba(0,0,0,.05);
+  background: $white;
+  padding: 0 26px 0 36px;
+
+  .header__content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: $max-page-width + ($nav-padding * 4.75);
+    font-size: 15px;
+    height: 88px;
+    margin: 0px auto;
+
+    .header__logos {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+
+      .header__ai2-logo,
+      .header__ai2-icon {
+        height: 55px;
+        width: 279px;
+        margin: 0 -5px 1px 0;
+      }
+
+      .header__ai2-icon {
+        display: none;
+        width: auto;
+        margin-bottom: 5px;
+      }
+
+      .header__chevron {
+        height: 88px;
+        width: 66px;
+      }
+
+      .header__allennlp-logo {
+        height: 23px;
+        width: 131px;
+        margin: 2px 0 0 -14px;
+      }
+    }
+
+    nav {
+      height: 100%;
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+
+          a {
+            box-sizing: border-box;
+            display: block;
+            color: $color-n8;
+            text-decoration: none;
+            transition: color 150ms linear;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1.4;
+            position: relative;
+            height: 100%;
+            border-bottom: 3px solid rgba(0, 0, 0, 0);
+            padding: 34px 10px 0px;
+
+            span {
+              color: inherit;
+              margin-bottom: 1px;
+            }
+
+            &:hover {
+              color: $color-b4;
+            }
+
+            &:active {
+              color: $color-b6;
+              opacity: 1;
+            }
+          }
+
+          &.nav__link--selected {
+            a {
+              border-bottom-color: $color-b5;
+              color: $color-b6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #header__mow-nav-trigger {
+    width: 40*$em;
+    height: 40*$em;
+    position: absolute;
+    right: 11*$em;
+    top: 11*$em;
+    display: none;
+    z-index: 999;
+    cursor: pointer;
+
+    svg {
+      width: 20*$em;
+      height: 18*$em;
+      display: block;
+      margin-top: 10*$em;
+      margin-left: 10*$em;
+      fill: $color-b5;
+    }
+  }
+}
+
+// Drop redundant "Home" link
+@media screen and (max-width: 1140px) {
+  .header {
+    li[data-page="home"] {
+      display: none;
+    }
+  }
+}
+
+// Switch to AI2 Icon
+@media screen and (max-width: 1080px) {
+  .header {
+    .header__content {
+      .header__logos {
+        .header__ai2-logo {
+          display: none;
+        }
+
+        .header__ai2-icon {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Switch to Mobile Menu
+@media screen and (max-width: 960px) {
+  .header {
+    padding: 0;
+
+    @include u-select-none;
+    height: auto;
+
+    #header__mow-nav-trigger {
+      display: block;
+    }
+
+    .header__content {
+      height: 60px;
+      height: auto;
+      display: block;
+
+      .header__logos {
+        padding: 0 0 0 13px;
+
+        .header__ai2-icon {
+          width: 54px;
+          height: 44px;
+          margin-right: 7px;
+        }
+
+        .header__chevron {
+          height: 60px;
+          width: auto;
+        }
+
+        .header__allennlp-logo {
+          margin-top: 6px;
+          margin-left: -3px;
+        }
+      }
+
+      nav {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: -999;
+        padding-bottom: 2*$em;
+        background: $white;
+        transition: opacity $transition-properties,
+                    z-index 0s linear,
+                    position 0s linear;
+
+        &.nav--mow-active {
+          display: block;
+          z-index: 9999;
+          position: static;
+        }
+
+        ul,
+        ul li,
+        ul li a {
+          @include u-mp0;
+          display: block;
+          width: auto;
+          height: auto;
+          line-height: inherit;
+        }
+
+        ul li {
+          border-top: 1px solid rgb(224,224,224);
+        }
+
+        ul li a.nav__link {
+          display: block;
+          width: auto;
+          height: auto;
+          line-height: inherit;
+          padding: 14*$em 18*$em;
+        }
+
+        ul li:first-child a.nav__link {
+          margin-top: 0;
+        }
+
+        ul li.nav__link--selected {
+          a {
+            border-bottom-width: 0;
+
+            &:after {
+              @include u-pe;
+              @include u-h100;
+              width: 4*$em;
+              background: $color-b5;
+              display: block;
+              top: 0;
+              left: 0;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }
+}

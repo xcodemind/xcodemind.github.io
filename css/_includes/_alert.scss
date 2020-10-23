@@ -1,0 +1,21 @@
+.alert {
+  border: 1px solid;
+  padding: 20*$em 25*$em;
+  margin: 30*$em 0;
+
+  &.alert--info {
+    border-color: $color-b3;
+    background: $color-b1;
+
+    &,
+    strong {
+      color: $color-b5;
+    }
+
+    a {
+      color: $color-b5;
+      text-decoration: underline;
+      font-weight: normal;
+    }
+  }
+}

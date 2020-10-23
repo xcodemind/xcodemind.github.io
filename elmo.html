@@ -1,0 +1,184 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include meta.html %}
+    <title>ELMo: Deep contextualized word representations</title>
+  </head>
+  <body data-page="elmo">
+    <div id="page-content">
+      {% include header.html %}
+      <div class="banner banner--interior-hero">
+        <div class="constrained constrained--sm">
+          <div class="banner--interior-hero__content">
+            <h1>ELMo</h1>
+            <p class="t-sm"><i><a href="https://arxiv.org/abs/1802.05365">Deep contextualized word representations</a></i><br>Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner,<br>Christopher Clark, Kenton Lee, Luke Zettlemoyer.<br>NAACL 2018.</p>
+          </div>
+        </div>
+      </div>
+      <div class="constrained constrained--med">
+        <h1>Introduction</h1>
+        <p>ELMo is a deep contextualized word representation that models
+both (1) complex characteristics of word use (e.g., syntax and semantics), and (2) how these uses vary
+across linguistic contexts (i.e., to model polysemy).
+These word vectors are learned functions of the internal states of a deep bidirectional language model (biLM), which is pre-trained on a large text corpus.
+They can be easily added to existing models and significantly improve the state of the art across a broad range of challenging NLP problems, including question answering, textual entailment and sentiment analysis.
+    <h1>Salient features</h1>
+    <p>ELMo representations are:
+    <ul>
+    <li><i>Contextual</i>: The representation for each word depends on the entire context in which it is used.
+    <li><i>Deep</i>: The word representations combine all layers of a deep pre-trained neural network.
+    <li><i>Character based</i>: ELMo representations are purely character based, allowing the network to use morphological clues to form robust representations for out-of-vocabulary tokens unseen in training.
+    </ul>
+
+    <h1>Key result</h1>
+    <p>Adding ELMo to existing NLP systems significantly improves the state-of-the-art for every considered task.  In most cases, they can be simply swapped for pre-trained GloVe or other word vectors.
+    <table>
+    <tr style="border-bottom: 2px solid black;"><td style="border-right: 1px solid black;"><b>Task</b></td><td><b>Previous SOTA</b></td><td style="border-right: 2px solid black;">&nbsp;</td><td><b>Our baseline</b></td><td><b>ELMo + Baseline</b></td><td><b>Increase (Absolute/Relative)</b></td></tr>
+    <tr><td style="border-right: 1px solid black;">SQuAD</td><td>SAN</td><td style="border-right: 2px solid black;">84.4</td><td>81.1</td><td>85.8</td><td>4.7 / 24.9%</td></tr>
+    <tr><td style="border-right: 1px solid black;">SNLI</td><td>Chen et al (2017)</td><td style="border-right: 2px solid black;">88.6</td><td>88.0</td><td>88.7 +/- 0.17</td><td>0.7 / 5.8%</td></tr>
+    <tr><td style="border-right: 1px solid black;">SRL</td><td>He et al (2017)</td><td style="border-right: 2px solid black;">81.7</td><td>81.4</td><td>84.6</td><td>3.2 / 17.2%</td></tr>
+    <tr><td style="border-right: 1px solid black;">Coref</td><td>Lee et al (2017)</td><td style="border-right: 2px solid black;">67.2</td><td>67.2</td><td>70.4</td><td>3.2 / 9.8%</td></tr>
+    <tr><td style="border-right: 1px solid black;">NER</td><td>Peters et al (2017)</td><td style="border-right: 2px solid black;">91.93 +/- 0.19</td><td>90.15</td><td>92.22 +/- 0.10</td><td>2.06 / 21%</td></tr>
+    <tr><td style="border-right: 1px solid black;">Sentiment (5-class)</td><td>McCann et al (2017)</td><td style="border-right: 2px solid black;">53.7</td><td>51.4</td><td>54.7 +/- 0.5</td><td>3.3 / 6.8%</td></tr>
+</table>
+
+    <h1>Pre-trained ELMo Models</h1>
+    <table>
+    <tr style="border-bottom: 2px solid black;">
+      <td style="border-right: 1px solid black;"><b>Model</b></td>
+      <td><b>Link(Weights/Options File)</b></td>
+      <td style="border-right: 2px solid black;">&nbsp;</td>
+      <td><b># Parameters (Millions)</b></td>
+      <td><b>LSTM Hidden Size/Output size</b></td>
+      <td><b># Highway Layers></td>
+      <td><b>SRL F1</b></td>
+      <td><b>Constituency Parsing F1</b></td>
+    </tr>
+    <tr>
+      <td style="border-right: 1px solid black;">Small</td>
+      <td><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x1024_128_2048cnn_1xhighway/elmo_2x1024_128_2048cnn_1xhighway_weights.hdf5>weights<a/></td>
+      <td style="border-right: 2px solid black;"><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x1024_128_2048cnn_1xhighway/elmo_2x1024_128_2048cnn_1xhighway_options.json>options<a/></td>
+      <td>13.6</td>
+      <td>1024/128</td>
+      <td>1</td>
+      <td>83.62</td>
+      <td>93.12</td>
+    </tr>
+    <tr>
+      <td style="border-right: 1px solid black;">Medium</td>
+      <td><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x2048_256_2048cnn_1xhighway/elmo_2x2048_256_2048cnn_1xhighway_weights.hdf5>weights<a/></td>
+      <td style="border-right: 2px solid black;"><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x2048_256_2048cnn_1xhighway/elmo_2x2048_256_2048cnn_1xhighway_options.json>options<a/></td>
+      <td>28.0</td>
+      <td>2048/256</td>
+      <td>1</td>
+      <td>84.04</td>
+      <td>93.60</td>
+    </tr>
+    <tr>
+      <td style="border-right: 1px solid black;">Original</td>
+      <td><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5>weights<a/></td>
+      <td style="border-right: 2px solid black;"><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json>options<a/></td>
+      <td>93.6</td>
+      <td>4096/512</td>
+      <td>2</td>
+      <td>84.63</td>
+      <td>93.85</td>
+    </tr>
+    <tr>
+      <td style="border-right: 1px solid black;">Original (5.5B)</td>
+      <td><a href=https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_weights.hdf5>weights<a/></td>
+      <td style="border-right: 2px solid black;"><a href= https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway_5.5B/elmo_2x4096_512_2048cnn_2xhighway_5.5B_options.json>options<a/></td>
+      <td>93.6</td>
+      <td>4096/512</td>
+      <td>2</td>
+      <td>84.93</td>
+      <td>94.01</td>
+    </tr>
+</table>
+<p>The baseline models described are from the original ELMo paper for SRL and from <a href="http://arxiv.org/abs/1805.06556">Extending a Parser to Distant Domains Using a Few Dozen Partially Annotated Examples (Joshi et al, 2018)</a> for the Constituency Parser. We do not include GloVe vectors in these models to provide a direct comparison between ELMo representations - in some cases, this results in a small drop in performance (0.5 F1 for the Constituency Parser, > 0.1 for the SRL model).</p>
+<p>All models except for the 5.5B model were trained on the <a href="http://www.statmt.org/lm-benchmark/">1 Billion Word Benchmark</a>, approximately 800M tokens of news crawl data from WMT 2011.
+The ELMo 5.5B model was trained on a dataset of 5.5B tokens consisting of Wikipedia (1.9B) and all of the monolingual news crawl data from WMT 2008-2012 (3.6B).
+In tasks where we have made a direct comparison, the 5.5B model has slightly higher performance then the original ELMo model, so we recommend it as a default model.
+</p>
+    <h1>Contributed ELMo Models</h1>
+    ELMo models have been trained for other languages and domains. We maintain a list of models here but are unable to respond to quality issues ourselves.
+    <table>
+      <tr style="border-bottom: 2px solid black;">
+        <td style="border-right: 1px solid black;"><b>Model</b></td>
+        <td><b>Link(Weights/Options File)</b></td>
+        <td style="border-right: 2px solid black;">&nbsp;</td>
+        <td><b>Contributor/Notes</td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">Portuguese (Wikipedia corpus)</td>
+        <td><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pt/wikipedia/elmo_pt_weights.hdf5">weights<a/></td>
+        <td style="border-right: 2px solid black;"><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pt/wikipedia/options.json">options<a/></td>
+        <td rowspan="2">Federal University of Goiás (UFG). Pedro Vitor Quinta de Castro, Anderson da Silva
+          Soares, Nádia Félix Felipe da Silva, Rafael Teixeira Sousa, Ayrton Denner da Silva Amaral.
+          Sponsered by Data-H, Aviso Urgente, and Americas Health Labs.
+        </td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">Portuguese (brWaC corpus)</td>
+        <td><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pt/brwac/elmo_pt_weights_dgx1.hdf5">weights<a/></td>
+        <td style="border-right: 2px solid black;"><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pt/brwac/options.json">options<a/></td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">Japanese</td>
+        <td><a href="https://exawizardsallenlp.blob.core.windows.net/data/weights.hdf5">weights</a></td>
+        <td style="border-right: 2px solid black;"><a href="https://exawizardsallenlp.blob.core.windows.net/data/options.json">options</a></td>
+        <td><a href="https://exawizards.com/en/">ExaWizards Inc.</a> Enkhbold Bataa, Joshua Wu. <a href="https://www.aclweb.org/anthology/P19-1458/">(paper)</a></td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">German</td>
+        <td><a href="https://github.com/t-systems-on-site-services-gmbh/german-elmo-model">code and weights</a></td>
+        <td style="border-right: 2px solid black;"></td>
+        <td>Philip May & T-Systems onsite</td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">Basque</td>
+        <td><a href="https://github.com/stefan-it/plur">code and weights</a></td>
+        <td style="border-right: 2px solid black;"></td>
+        <td><a href="https://schweter.eu">Stefan Schweter</a></td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">PubMed</td>
+        <td><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pubmed/elmo_2x4096_512_2048cnn_2xhighway_weights_PubMed_only.hdf5">weights<a/></td>
+        <td style="border-right: 2px solid black;"><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/contributed/pubmed/elmo_2x4096_512_2048cnn_2xhighway_options.json">options<a/></td>
+        <td>Matthew Peters
+        </td>
+      </tr>
+      <tr>
+        <td style="border-right: 1px solid black;">Transformer ELMo</td>
+        <td><a href="https://s3-us-west-2.amazonaws.com/allennlp/models/transformer-elmo-2019.01.10.tar.gz">model archive<a/></td>
+        <td style="border-right: 2px solid black;"></td>
+        <td>Joel Grus and Brendan Roof
+        </td>
+      </tr>
+    </table>
+    </h1>
+
+    <h1>Code releases and AllenNLP integration</h1>
+    <p>There are reference implementations of the pre-trained bidirectional language model available in both PyTorch and TensorFlow.  The PyTorch verison is fully integrated into <a href="https://github.com/allenai/allennlp/blob/master/allennlp/modules/elmo.py">AllenNLP</a>.  The TensorFlow version is also available in <a href="https://github.com/allenai/bilm-tf">bilm-tf.</a>
+    <h1>Training models</h1>
+    <p>You can retrain ELMo models using the tensorflow code in <a href=https://github.com/allenai/bilm-tf>bilm-tf</a>.
+    <h1>More information</h1>
+    <p>See our paper <a href="https://arxiv.org/abs/1802.05365">Deep contextualized word representations</a> for more information about the algorithm and a detailed analysis.
+    <p><i>Citation:</i>
+    <pre>
+@inproceedings{Peters:2018,
+  author={Peters, Matthew E. and  Neumann, Mark and Iyyer, Mohit and Gardner, Matt and Clark, Christopher and Lee, Kenton and Zettlemoyer, Luke},
+  title={Deep contextualized word representations},
+  booktitle={Proc. of NAACL},
+  year={2018}
+}
+    </pre>
+      </div>
+      {% include footer.html %}
+    </div>
+    {% include svg-sprite.html %}
+    {% include scripts.html %}
+  </body>
+</html>

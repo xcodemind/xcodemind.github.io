@@ -1,0 +1,49 @@
+// General
+$white: #ffffff;
+$white-faded: fade-out($white, 0.34);
+$black: #000000;
+$off-black: #111212;
+$slate: #162328;
+$banner-hero: #1c292f;
+$gray-light: #f6f8fa;
+$gray-med: #e0e0e0;
+$muted-gray-blue: #213744;
+$gray-light-overlay: #edf1f5;
+$text: #232323;
+$text-secondary: #8c9296;
+$text-faded: fade-out($text, 0.25);
+$default-code-color: #333333;
+
+// Varnish colors
+$color-b1: #F0F7FF; // B1 blue
+$color-b3: #80BDFF; // B3 blue
+$color-b4: #2F85F7; // B4 blue
+$color-b5: #2376E5; // B5 blue
+$color-b6: #265ED4; // B6 blue
+$color-n8: #616c7a; // N8 gray
+
+.c-text-secondary {
+  color: $text-secondary;
+}
+
+.c-bg-slate {
+  background: $slate;
+}
+
+.c-bg-blue {
+  background: $color-b5;
+}
+
+.c-bg-gray-light {
+  background: $gray-light;
+}
+
+.c-bg--alternate.c-bg-white.c-bg-gray-light {
+  .banner:not(.banner--interior-hero):not(footer):nth-child(odd) {
+    background: #fff;
+  }
+
+  .banner:not(.banner--interior-hero):not(footer):nth-child(even) {
+    background: $gray-light;
+  }
+}

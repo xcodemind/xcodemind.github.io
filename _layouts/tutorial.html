@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include meta.html %}
+    <title>AllenNLP - Tutorials</title>
+  </head>
+   <body data-page="tutorials" class="tutorials">
+    <div id="page-content">
+      {% include header.html %}
+      <div class="banner banner--interior-hero banner--short">
+        <div class="constrained constrained--sm">
+          <div class="banner--interior-hero__content">
+            <h1>Tutorials</h1>
+          </div>
+        </div>
+      </div>
+      <div class="tutorials__content constrained constrained--med">
+        {{ content }}
+      </div>
+      {% include footer.html %}
+    </div>
+    {% include svg-sprite.html %}
+    {% include scripts.html %}
+  </body>
+</html>
