@@ -5,59 +5,55 @@
   <head>
     {% include meta.html %}
     <title>Team</title>
-    <style>
-      .team-member {
-      text-align: center;
-      margin-bottom: 50px;
-      }
-      .team-member img {
-      margin: 0 auto;
-      border: 7px solid white;
-      }
-      .team-member h4 {
-      margin-top: 25px;
-      margin-bottom: 0;
-      text-transform: none;
-      }
-      .team-member p {
-      margin-top: 0;
-      }
-      .text-muted {
-      color: #777777;
-      }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body data-page="elmo">
     <div id="page-content">
       {% include header.html %}
-      <!-- <div class="banner banner--interior-hero">
-        <div class="constrained constrained--sm">
-          <div class="banner--interior-hero__content">
-            <h1>ELMo</h1>
-            <p class="t-sm"><i><a href="https://arxiv.org/abs/1802.05365">Deep contextualized word representations</a></i><br>Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner,<br>Christopher Clark, Kenton Lee, Luke Zettlemoyer.<br>NAACL 2018.</p>
-          </div>
-        </div>
-      </div> -->
       <div class="constrained constrained--med">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h1 class="section-heading">TEAM
-                    <hr class="section-heading-spacer"></h1>
-                    <div class="clearfix"></div>
+                    <h1>Main Contributors</h1>
                 </div>
-            </div> 
+            </div>
             <div class="row">
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
-              <li class="text-center"><img class="avatar avatar-32 img-circle" src="photo.jpg"/><p>avatar-md</p></li>
+              <ul class="nav nav-justified " style="padding-left: 0px; list-style-type: none;">
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/ywan.png"/><p>Yao Wan<br/>@HUST</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/yhe.jpg"/><p>Yang He<br/>@UTS</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/jgzhang.jpg"/><p>Jian-Guo Zhang<br/>@UIC</p></li>
+              </ul>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1>Advisory Board</h1>
+                </div>
+            </div>
+            <div class="row">
+              <ul class="nav nav-justified " style="padding-left: 0px; list-style-type: none;">
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/ylsui.png"/><p>Yulei Sui<br/>@UTS</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/hjin.jpg"/><p>Hai Jin<br/>@HUST</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/gdxu.jpg"/><p>Guandong Xu<br/>@UTS</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/cmxiong.jpg"/><p>Caiming Xiong<br/>@Salesforce</p></li>
+                <li class="text-center" style="padding-left:20px;"><img class="avatar avatar-16 rounded-circle" style="padding:10px;width:160px;height:160px" src="assets/team/psyu.jpg"/><p>Philip S. Yu<br/>@UIC</p></li>
+              </ul>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1>Acknowledgement</h1>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1">
+                  <p>The Fairseq highly inspires the NaturalCC for natural language processing. We appreciate the Fairseq team for their contribution and the high-quality backbone structure of the framework.</p>
+              </div>
             </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>
