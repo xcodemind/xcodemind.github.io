@@ -36,8 +36,6 @@
 
                     <p>The leaderboard shows the results of different models of four tasks: Code Retrieval, Code Summarization, Code Completion, and Typ inference.</p>
                     <p>If you would like to report your results here, please submit an issue to <a href="https://github.com/xcodemind/xcodemind.github.io" target="_blank">CodeMind GitHub repository</a>. All results will be updated if they pass our check. </p>
-                    <p><font color="red">The red numbers in table represents the best results for each metric.</font></p>
-                
                 </div>
 
                 <br/><br/><br/>
@@ -93,89 +91,78 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <!-- <th scope="row"> -->
-                                        <!-- <p>1</p> -->
-                                        <!-- <span class="date badge badge-secondary">07/01/2021</span> -->
-                                    <!-- </th> -->
-                                    <td style="word-break:break-word;">
-                                        <b>NBOW</b>
-                                        <!-- <p class="institution">Code Retrieval baseline</p> -->
+                                    <th scope="row">
+                                        <p>1</p>
                                         <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>SelfAttn</b>
+                                        <p class="institution">Retrieval baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
-
-                                    <td><b>66.59</b></td>
-                                    <td><b>59.92</b></td>
-                                    <td><b>47.15</b></td>
-                                    <td><b>54.75</b></td>
-                                    <td><b>63.33</b></td>
-                                    <td><b>42.86</b></td>
-
+                                    <td><b>78.45</b></td>
+                                    <td><b>66.55</b></td>
+                                    <td><b>50.38</b></td>
+                                    <td><b>65.78</b></td>
+                                    <td><b>79.09</b></td>
+                                    <td><b>47.96</b></td>
                                 </tr>
-                                
 
                                 <tr>
-                                    <!-- <th scope="row"> -->
-                                        <!-- <p>2</p> -->
-                                        <!-- <span class="date badge badge-secondary">06/07/2021</span> -->
-                                    <!-- </th> -->
+                                    <th scope="row">
+                                        <p>2</p>
+                                        <span class="date badge badge-secondary">06/07/2021</span>
+                                    </th>
                                     <td style="word-break:break-word;">
                                         <b>Conv1D</b>
-                                        <!-- <p class="institution">Code Retrieval baseline</p> -->
-                                        <span class="date badge badge-secondary">06/07/2021</span>
+                                        <p class="institution">Retrieval baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
-
                                     <td><b>70.87</b></td>
                                     <td><b>60.49</b></td>
                                     <td><b>38.81</b></td>
                                     <td><b>61.92</b></td>
                                     <td><b>67.29</b></td>
                                     <td><b>36.53</b></td>
-
                                 </tr>
                                 
-
                                 <tr>
-                                    <!-- <th scope="row"> -->
-                                        <!-- <p>3</p>
-                                        <span class="date badge badge-secondary">07/01/2021</span> -->
-                                    <!-- </th> -->
+                                    <th scope="row">
+                                        <p>3</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
                                     <td style="word-break:break-word;">
-                                        <b>BiRNN</b>
-                                        <!-- <p class="institution">Code Retrieval baseline</p> -->
-                                        <span class="date badge badge-secondary">06/07/2021</span>
+                                        <b>NBOW</b>
+                                        <p class="institution">Retrieval baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
+                                    <td><b>66.59</b></td>
+                                    <td><b>59.92</b></td>
+                                    <td><b>47.15</b></td>
+                                    <td><b>54.75</b></td>
+                                    <td><b>63.33</b></td>
+                                    <td><b>42.86</b></td>
+                                </tr>
 
+                                <tr>
+                                    <th scope="row">
+                                        <p>4</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>BiRNN</b>
+                                        <p class="institution">Code Retrieval baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
                                     <td><b>65.80</b></td>
                                     <td><b>48.60</b></td>
                                     <td><b>23.23</b></td>
                                     <td><b>51.36</b></td>
                                     <td><b>48.28</b></td>
                                     <td><b>19.35</b></td>
-
                                 </tr>
 
-                                <tr>
-                                    <!-- <th scope="row"> -->
-                                        <!-- <p>4</p>
-                                        <span class="date badge badge-secondary">07/01/2021</span> -->
-                                    <!-- </th> -->
-                                    <td style="word-break:break-word;">
-                                        <b>SelfAttn</b>
-                                        <!-- <p class="institution">Code Retrieval baseline</p> -->
-                                        <span class="date badge badge-secondary">06/07/2021</span>
-                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                    </td>
-                                    
-                                    <td><b><font color="red">78.45</font></b></td>
-                                    <td><b><font color="red">66.55</font></b></td>
-                                    <td><b><font color="red">50.38</font></b></td>
-                                    <td><b><font color="red">65.78</font></b></td>
-                                    <td><b><font color="red">79.09</font></b></td>
-                                    <td><b><font color="red">47.96</font></b></td>
-                                </tr>
+                          
                             </tbody>
                             </table>
                         </div>
@@ -193,23 +180,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr>
                                     <th scope="row">
                                         <p>1</p>
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>Seq2Seq + Attn</b>
+                                        <b>PLBART</b>
                                         <p class="institution">Summarization baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>25.57</b></td>
-
-                                    <td><b>14.40</b></td>
-                                    <td><b>39.41</b></td>
-                             
+                                    <td><b>32.71</b></td>
+                                    <td><b>18.13</b></td>
+                                    <td><b>46.05</b></td>                            
                                 </tr>
 
                                 <tr>
@@ -218,14 +202,14 @@
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>Tree2Seq + Attn</b>
+                                        <b>Transformer + BPE</b>
                                         <p class="institution">Summarization baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>23.35</b></td>
-                                    <td><b>12.59</b></td>
-                                    <td><b>36.49</b></td>
+                                    <td><b>31.57</b></td>
+                                    <td><b>17.74</b></td>
+                                    <td><b>45.18</b></td>
                                 </tr>
 
                                 <tr>
@@ -250,14 +234,16 @@
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>Transformer + BPE</b>
+                                        <b>Seq2Seq + Attn</b>
                                         <p class="institution">Summarization baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>31.57</b></td>
-                                    <td><b>17.74</b></td>
-                                    <td><b>45.18</b></td>
+                                    <td><b>25.57</b></td>
+
+                                    <td><b>14.40</b></td>
+                                    <td><b>39.41</b></td>
+                             
                                 </tr>
 
                                 <tr>
@@ -266,15 +252,16 @@
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>PLBART</b>
+                                        <b>Tree2Seq + Attn</b>
                                         <p class="institution">Summarization baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>32.71</b></td>
-                                    <td><b>18.13</b></td>
-                                    <td><b>46.05</b></td>                            
+                                    <td><b>23.35</b></td>
+                                    <td><b>12.59</b></td>
+                                    <td><b>36.49</b></td>
                                 </tr>
+
                             </tbody>
                             </table>
                         </div>
@@ -300,26 +287,24 @@
 
                             </thead>
                             <tbody>
-
                                 <tr>
                                     <th scope="row">
                                         <p>1</p>
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>LSTM</b>
+                                        <b>TravTrans</b>
                                         <p class="institution">Completion baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>51.67</b></td>
+                                    <td><b>72.08</b></td>
 
-                                    <td><b>47.45</b></td>
-                                    <td><b>46.52</b></td>
-                                    <td><b>66.06</b></td>
-                                    <td><b>73.73</b></td>
+                                    <td><b>68.55</b></td>
+                                    <td><b>76.33</b></td>
+                                    <td><b>71.08</b></td>
+                                    <td><b>83.17</b></td>
                                 </tr>
-                                
 
                                 <tr>
                                     <th scope="row">
@@ -339,26 +324,24 @@
                                     <td><b>73.54</b></td>
                                     <td><b>82.17</b></td>
                                 </tr>
-                                
 
-                                
                                 <tr>
                                     <th scope="row">
                                         <p>3</p>
                                         <span class="date badge badge-secondary">07/01/2021</span>
                                     </th>
                                     <td style="word-break:break-word;">
-                                        <b>TravTrans</b>
+                                        <b>LSTM</b>
                                         <p class="institution">Completion baseline</p>
                                         <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
                                     </td>
                                     <!-- <td><b></b></td> -->
-                                    <td><b>72.08</b></td>
+                                    <td><b>51.67</b></td>
 
-                                    <td><b>68.55</b></td>
-                                    <td><b>76.33</b></td>
-                                    <td><b>71.08</b></td>
-                                    <td><b>83.17</b></td>
+                                    <td><b>47.45</b></td>
+                                    <td><b>46.52</b></td>
+                                    <td><b>66.06</b></td>
+                                    <td><b>73.73</b></td>
                                 </tr>
 
                             </tbody>
