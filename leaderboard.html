@@ -3,447 +3,425 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-        {% include meta.html %}
+        <!-- {% include meta.html %} -->
         <title>Leaderboard</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body data-page="leaderboard">
-        <div id="page-content">
-            {% include header.html %}
-            <div class="container" align="justify">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                        <h4>Leaderboard</h4>
-                    </div>
+        <!-- <div id="page-content">
+            {% include header.html %} -->
+        <div class="container" align="justify">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h4>Leaderboard</h4>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <h5>Offical Leaderboard</h5>
+                </div> -->
+
+                <br/>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <!-- <h6>Use the tabs below to navigate to the corresponding leaderboard for each task. </h6> -->
+
+                    <p>The leaderboard shows the results of different models of four tasks: Code Retrieval, Code Summarization, Code Completion, and Typ inference.</p>
+                    <p>If you would like to report your results here, please submit an issue to <a href="https://github.com/xcodemind/xcodemind.github.io" target="_blank">CodeMind GitHub repository</a>. All results will be updated if they pass our check. </p>
                 </div>
 
-                <hr>
+                <br/><br/><br/>
 
-                <div class="row">
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                        <h5>Offical Leaderboard</h5>
-                    </div> -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" >
+                            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Code Retrieval</a></li>
+                        <li class="nav-item" >
+                            <a class="nav-link" id="retrieval-tab" data-toggle="tab" href="#retrieval" role="tab" aria-controls="retrieval" aria-selected="false">Code Summarization</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="qa-tab" data-toggle="tab" href="#qa" role="tab" aria-controls="qa" aria-selected="false">Code Completion</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="caption-tab" data-toggle="tab" href="#caption" role="tab" aria-controls="caption" aria-selected="false">Type Inference</a></li>
+                    </ul>
 
                     <br/>
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                        <!-- <h6>Use the tabs below to navigate to the corresponding leaderboard for each task. </h6> -->
-
-                        <p>The leaderboard shows the results of different models of four tasks: Code Retrieval, Code Summarization, Code Completion, and Typ inference.</p>
-                        <p>If you would like to report your results here, please submit an issue to <a href="https://github.com/xcodemind/xcodemind.github.io" target="_blank">CodeMind GitHub repository</a>. All results will be updated if they pass our check. </p>
-                    </div>
-
-                    <br/><br/><br/>
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" >
-                                <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Code Retrieval</a></li>
-                            <li class="nav-item" >
-                                <a class="nav-link" id="retrieval-tab" data-toggle="tab" href="#retrieval" role="tab" aria-controls="retrieval" aria-selected="false">Code Summarization</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="qa-tab" data-toggle="tab" href="#qa" role="tab" aria-controls="qa" aria-selected="false">Code Completion</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="caption-tab" data-toggle="tab" href="#caption" role="tab" aria-controls="caption" aria-selected="false">Type Inference</a></li>
-                        </ul>
-
-                        <br/>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
-                                <p>MRR of our model and baseline methods for the task of code retrieval over CodeSearchNet dataset. (Best scores are in boldface.)</p>
-                                <table class="table table-hover sortable  performanceTable">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
+                            <p>MRR of our model and baseline methods for the task of code retrieval over CodeSearchNet dataset. (Best scores are in boldface.)</p>
+                            <table class="table table-hover sortable  performanceTable">
+                            
+                                <!-- <colgroup span="4" class="wBackground"></colgroup>
+                                <colgroup span="4"></colgroup>
+                                <colgroup span="3" class="wBackground"></colgroup> -->
+                            <thead>
+                                <!-- <tr>
+                                <th rowspan="2" >Rank</th>
+                                <td rowspan="2" >Model</td>
+                                <td rowspan="2" >Meta-Average</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td colspan="4" >Retrieval</td>
+                                <td colspan="4" >QA</td>
+                                <td colspan="3" >Caption</td>
+                                </tr> -->
+                                <tr>
+                                    <!-- <th scope="row"></th>
+                                <td></td>
+                                <td></td> -->
                                 
-                                    <!-- <colgroup span="4" class="wBackground"></colgroup>
-                                    <colgroup span="4"></colgroup>
-                                    <colgroup span="3" class="wBackground"></colgroup> -->
-                                <thead>
-                                    <!-- <tr>
-                                    <th rowspan="2" >Rank</th>
-                                    <td rowspan="2" >Model</td>
-                                    <td rowspan="2" >Meta-Average</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td colspan="4" >Retrieval</td>
-                                    <td colspan="4" >QA</td>
-                                    <td colspan="3" >Caption</td>
-                                    </tr> -->
-                                    <tr>
-                                        <!-- <th scope="row"></th>
-                                    <td></td>
-                                    <td></td> -->
-                                    
-                                    <th class="sorttable_nosort" scope="col">Rank</th>
-                                    <th class="sorttable_nosort" scope="col">Model</th>
-                                    <!-- <th scope="col">Ave-Rank</th> -->
-                                    <th scope="col">Go</th>
-                                    <th scope="col">Java</th>
-                                    <th scope="col" >JS</th>
-                                    <th scope="col">PHP</th>
-                                    <th scope="col">Python</th>
-                                    <th scope="col">Ruby</th>
-                                    <th scope="col">Cost</th>
+                                <th class="sorttable_nosort" scope="col">Rank</th>
+                                <th class="sorttable_nosort" scope="col">Model</th>
+                                <!-- <th scope="col">Ave-Rank</th> -->
+                                <th scope="col">Go</th>
+                                <th scope="col">Java</th>
+                                <th scope="col" >JS</th>
+                                <th scope="col">PHP</th>
+                                <th scope="col">Python</th>
+                                <th scope="col">Ruby</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <p>1</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>NBOW</b>
+                                        <p class="institution">Retrieval baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+
+                                    <td><b>66.59</b></td>
+                                    <td><b>59.92</b></td>
+                                    <td><b>47.15</b></td>
+                                    <td><b>54.75</b></td>
+                                    <td><b>63.33</b></td>
+                                    <td><b>42.86</b></td>
+
                                 </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <p>1</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>NBOW</b>
-                                            <p class="institution">Retrieval baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
+                                
 
-                                        <td><b>66.59</b></td>
-                                        <td><b>59.92</b></td>
-                                        <td><b>47.15</b></td>
-                                        <td><b>54.75</b></td>
-                                        <td><b>63.33</b></td>
-                                        <td><b>42.86</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>2</p>
+                                        <span class="date badge badge-secondary">06/07/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Conv1D</b>
+                                        <p class="institution">Retrieval baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
 
-                                        <td><b>0.16s/B</b></td>
-                                    </tr>
+                                    <td><b>70.87</b></td>
+                                    <td><b>60.49</b></td>
+                                    <td><b>38.81</b></td>
+                                    <td><b>61.92</b></td>
+                                    <td><b>67.29</b></td>
+                                    <td><b>36.53</b></td>
+
+                                </tr>
+                                
+
+                                <tr>
+                                    <th scope="row">
+                                        <p>3</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>BiRNN</b>
+                                        <p class="institution">Retrieval baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+
+                                    <td><b>65.80</b></td>
+                                    <td><b>48.60</b></td>
+                                    <td><b>23.23</b></td>
+                                    <td><b>51.36</b></td>
+                                    <td><b>48.28</b></td>
+                                    <td><b>19.35</b></td>
+
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">
+                                        <p>4</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>SelfAttu</b>
+                                        <p class="institution">Retrieval baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
                                     
+                                    <td><b>78.45</b></td>
+                                    <td><b>66.55</b></td>
+                                    <td><b>50.38</b></td>
+                                    <td><b>65.78</b></td>
+                                    <td><b>79.09</b></td>
+                                    <td><b>47.96</b></td>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>2</p>
-                                            <span class="date badge badge-secondary">06/07/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Conv1D</b>
-                                            <p class="institution">Retrieval baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade " id="retrieval" role="tabpanel" aria-labelledby="home-tab">
+                            <p>PerformanceofourmodelandbaselinemethodsforthetaskofcodesummarizationoverPython-Doc dataset. (Best scores are in boldface.)</p>
+                            <table class="table table-hover sortable performanceTable">
+                            <thead>
+                                <tr>
+                                <th class="sorttable_nosort" scope="col">Rank</th>
+                                <th class="sorttable_nosort" scope="col">Model</th>
+                                <!-- <th scope="col"> Ave-Rank</th> -->
+                                <th scope="col">BLEU-4</th>
+                                <th scope="col">METEOR</th>
+                                <th scope="col">BOUGE-L</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                                        <td><b>70.87</b></td>
-                                        <td><b>60.49</b></td>
-                                        <td><b>38.81</b></td>
-                                        <td><b>61.92</b></td>
-                                        <td><b>67.29</b></td>
-                                        <td><b>36.53</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>1</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Seq2Seq + Attn</b>
+                                        <p class="institution">Summarization baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>25.57</b></td>
 
-                                        <td><b>0.30s/B</b></td>
-                                    </tr>
-                                    
+                                    <td><b>14.40</b></td>
+                                    <td><b>39.41</b></td>
+                             
+                                </tr>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>3</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>BiRNN</b>
-                                            <p class="institution">Retrieval baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>2</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Tree2Seq + Attn</b>
+                                        <p class="institution">Summarization baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>23.35</b></td>
+                                    <td><b>12.59</b></td>
+                                    <td><b>36.49</b></td>
+                                </tr>
 
-                                        <td><b>65.80</b></td>
-                                        <td><b>48.60</b></td>
-                                        <td><b>23.23</b></td>
-                                        <td><b>51.36</b></td>
-                                        <td><b>48.28</b></td>
-                                        <td><b>19.35</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>3</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Transformer</b>
+                                        <p class="institution">Summarization baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>30.64</b></td>
+                                    <td><b>17.65</b></td>
+                                    <td><b>44.59</b></td>
+                                </tr>
 
-                                        <td><b>0.74s/B</b></td>
-                                    </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <p>4</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Transformer + BPE</b>
+                                        <p class="institution">Summarization baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>31.57</b></td>
+                                    <td><b>17.74</b></td>
+                                    <td><b>45.18</b></td>
+                                </tr>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>4</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>SelfAttu</b>
-                                            <p class="institution">Retrieval baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        
-                                        <td><b>78.45</b></td>
-                                        <td><b>66.55</b></td>
-                                        <td><b>50.38</b></td>
-                                        <td><b>65.78</b></td>
-                                        <td><b>79.09</b></td>
-                                        <td><b>47.96</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>5</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>PLBART</b>
+                                        <p class="institution">Summarization baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>32.71</b></td>
+                                    <td><b>18.13</b></td>
+                                    <td><b>46.05</b></td>                            
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="qa" role="tabpanel" aria-labelledby="qa-tab">
+                            <p>MRR of our model and baseline methods for the task of code completion over Py150 dataset. (Attr: attribute; Num: numeric constant; Name: variable, module; Func: function parameter name; Token: all tokens. Best scores are in boldface.)</p>
+                            <table class="table table-hover sortable performanceTable">
+                            <thead>
 
-                                        <td><b>0.25s/B</b></td>
-                                    </tr>
-                                </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade " id="retrieval" role="tabpanel" aria-labelledby="home-tab">
-                                <p>PerformanceofourmodelandbaselinemethodsforthetaskofcodesummarizationoverPython-Doc dataset. (Best scores are in boldface.)</p>
-                                <table class="table table-hover sortable performanceTable">
-                                <thead>
-                                    <tr>
-                                    <th class="sorttable_nosort" scope="col">Rank</th>
-                                    <th class="sorttable_nosort" scope="col">Model</th>
-                                    <!-- <th scope="col"> Ave-Rank</th> -->
-                                    <th scope="col">BLEU-4</th>
-                                    <th scope="col">METEOR</th>
-                                    <th scope="col">BOUGE-L</th>
-                                    <th scope="col">Cost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                <tr class="firstHead">
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
+                                    <th colspan="5">Accuracy</th>
+                                </tr>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>1</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Seq2Seq + Attn</b>
-                                            <p class="institution">Summarization baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>25.57</b></td>
+                                <tr class="twoHead">
+                                <!-- <th scope="col">Ave-Rank</th> -->
+                                <th scope="col">Attr</th>
+                                <th scope="col">Num</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Param</th>
+                                <th scope="col">Token</th>
+                                </tr>
 
-                                        <td><b>14.40</b></td>
-                                        <td><b>39.41</b></td>
-                                        <td><b>0.09s/B</b></td>
-                                    </tr>
+                            </thead>
+                            <tbody>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>2</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Tree2Seq + Attn</b>
-                                            <p class="institution">Summarization baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>23.35</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>1</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>LSTM</b>
+                                        <p class="institution">Completion baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>51.67</b></td>
 
-                                        <td><b>12.59</b></td>
-                                        <td><b>36.49</b></td>
-                                        <td><b>0.48s/B</b></td>
-                                    </tr>
+                                    <td><b>47.45</b></td>
+                                    <td><b>46.52</b></td>
+                                    <td><b>66.06</b></td>
+                                    <td><b>73.73</b></td>
+                                </tr>
+                                
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>3</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Transformer</b>
-                                            <p class="institution">Summarization baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>30.64</b></td>
+                                <tr>
+                                    <th scope="row">
+                                        <p>2</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>GPT-2</b>
+                                        <p class="institution">Completion baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>70.37</b></td>
 
-                                        <td><b>17.65</b></td>
-                                        <td><b>44.59</b></td>
-                                        <td><b>0.26s/B</b></td>
-                                    </tr>
+                                    <td><b>62.20</b></td>
+                                    <td><b>63.84</b></td>
+                                    <td><b>73.54</b></td>
+                                    <td><b>82.17</b></td>
+                                </tr>
+                                
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>4</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Transformer + BPE</b>
-                                            <p class="institution">Summarization baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>31.57</b></td>
+                                
+                                <tr>
+                                    <th scope="row">
+                                        <p>3</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>TravTrans</b>
+                                        <p class="institution">Completion baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>72.08</b></td>
 
-                                        <td><b>17.74</b></td>
-                                        <td><b>45.18</b></td>
-                                        <td><b>0.27s/B</b></td>
-                                    </tr>
+                                    <td><b>68.55</b></td>
+                                    <td><b>76.33</b></td>
+                                    <td><b>71.08</b></td>
+                                    <td><b>83.17</b></td>
+                                </tr>
 
-                                    <tr>
-                                        <th scope="row">
-                                            <p>5</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>PLBART</b>
-                                            <p class="institution">Summarization baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>32.71</b></td>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="caption" role="tabpanel" aria-labelledby="caption-tab">
+                            <p>Accuracy of our model and baseline methods for the task of type inference over Py150 dataset.</p>
+                            <table class="table table-hover sortable performanceTable">
+                            <thead>
 
-                                        <td><b>18.13</b></td>
-                                        <td><b>46.05</b></td>
-                                        <td><b>0.80s/B</b></td>
-                                    </tr>
-                                </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="qa" role="tabpanel" aria-labelledby="qa-tab">
-                                <p>MRR of our model and baseline methods for the task of code completion over Py150 dataset. (Attr: attribute; Num: numeric constant; Name: variable, module; Func: function parameter name; Token: all tokens. Best scores are in boldface.)</p>
-                                <table class="table table-hover sortable performanceTable">
-                                <thead>
+                                <tr class="firstHead">
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
+                                    <th colspan="2">All types</th> 
+                                    <th colspan="2">Any types</th>
+                                </tr>
 
-                                    <tr class="firstHead">
-                                        <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
-                                        <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
-                                        <th colspan="5">Accuracy</th> 
-                                        <th colspan="1" rowspan="2" scope="col">Cost</th>
-                                    </tr>
+                                <tr class="twoHead">
+                                <!-- <th scope="col">Ave-Rank</th> -->
+                                <th scope="col">Acc@1</th>
+                                <th scope="col">Acc@5</th>
+                                <th scope="col">Acc@1</th>
+                                <th scope="col">Acc@5</th>
+                                </tr>
 
-                                    <tr class="twoHead">
-                                    <!-- <th scope="col">Ave-Rank</th> -->
-                                    <th scope="col">Attr</th>
-                                    <th scope="col">Num</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Param</th>
-                                    <th scope="col">Token</th>
-                                    </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <p>1</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>DeepTyper</b>
+                                        <p class="institution">Type Inference baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>0.52</b></td>
+                                    <td><b>0.67</b></td>
+                                    <td><b>0.43</b></td>
+                                    <td><b>0.67</b></td>
+                                </tr>
 
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <th scope="row">
-                                            <p>1</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>LSTM</b>
-                                            <p class="institution">Completion baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>51.67</b></td>
-
-                                        <td><b>47.45</b></td>
-                                        <td><b>46.52</b></td>
-                                        <td><b>66.06</b></td>
-                                        <td><b>73.73</b></td>
-                                        <td><b>0.31s/B</td>
-                                    </tr>
-                                    
-
-                                    <tr>
-                                        <th scope="row">
-                                            <p>2</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>GPT-2</b>
-                                            <p class="institution">Completion baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>70.37</b></td>
-
-                                        <td><b>62.20</b></td>
-                                        <td><b>63.84</b></td>
-                                        <td><b>73.54</b></td>
-                                        <td><b>82.17</b></td>
-                                        <td><b>0.43s/B</td>
-                                    </tr>
-                                    
-
-                                    
-                                    <tr>
-                                        <th scope="row">
-                                            <p>3</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>TravTrans</b>
-                                            <p class="institution">Completion baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>72.08</b></td>
-
-                                        <td><b>68.55</b></td>
-                                        <td><b>76.33</b></td>
-                                        <td><b>71.08</b></td>
-                                        <td><b>83.17</b></td>
-                                        <td><b>0.43s/B</td>
-                                    </tr>
-
-                                </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="caption" role="tabpanel" aria-labelledby="caption-tab">
-                                <p>Accuracy of our model and baseline methods for the task of type inference over Py150 dataset.</p>
-                                <table class="table table-hover sortable performanceTable">
-                                <thead>
-
-                                    <tr class="firstHead">
-                                        <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
-                                        <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
-                                        <th colspan="2">All types</th> 
-                                        <th colspan="2">Any types</th> 
-                                        <th colspan="1" rowspan="2" scope="col">Cost</th>
-                                    </tr>
-
-                                    <tr class="twoHead">
-                                    <!-- <th scope="col">Ave-Rank</th> -->
-                                    <th scope="col">Acc@1</th>
-                                    <th scope="col">Acc@5</th>
-                                    <th scope="col">Acc@1</th>
-                                    <th scope="col">Acc@5</th>
-                                    </tr>
-
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <p>1</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>DeepTyper</b>
-                                            <p class="institution">Type Inference baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>0.52</b></td>
-                                        <td><b>0.67</b></td>
-                                        <td><b>0.43</b></td>
-                                        <td><b>0.67</b></td>
-                                        <td><b>0.42s/B</b></td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">
-                                            <p>2</p>
-                                            <span class="date badge badge-secondary">07/01/2021</span>
-                                        </th>
-                                        <td style="word-break:break-word;">
-                                            <b>Transformer</b>
-                                            <p class="institution">Type Inference baseline</p>
-                                            <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
-                                        </td>
-                                        <!-- <td><b></b></td> -->
-                                        <td><b>0.34</b></td>
-                                        <td><b>0.64</b></td>
-                                        <td><b>0.37</b></td>
-                                        <td><b>0.75</b></td>
-
-                                        <td><b>0.85s/B</b></td>
-                                    </tr>
-                                    
-                                </tbody>
-                                </table>
-                            </div>
+                                <tr>
+                                    <th scope="row">
+                                        <p>2</p>
+                                        <span class="date badge badge-secondary">07/01/2021</span>
+                                    </th>
+                                    <td style="word-break:break-word;">
+                                        <b>Transformer</b>
+                                        <p class="institution">Type Inference baseline</p>
+                                        <!-- <a href="" target="_blank">Paper</a>, <a href="" target="_blank">Code</a> -->
+                                    </td>
+                                    <!-- <td><b></b></td> -->
+                                    <td><b>0.34</b></td>
+                                    <td><b>0.64</b></td>
+                                    <td><b>0.37</b></td>
+                                    <td><b>0.75</b></td>
+                                </tr>
+                                
+                            </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-
-                <hr>
             </div>
+
+            <hr>
         </div>
+        <!-- </div> -->
         <br/>
     </body>
 
