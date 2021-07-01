@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-
+        {% include meta.html %}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>VALUE</title>
         <meta name="description" content="VALUE is a evaluation benchmark built on 11 datasets across 3 tasks with the focus on multi-channel videos (video+subtitle) for Video-and-Language Understanding Evaluation">
@@ -14,11 +14,10 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/custom.css">
+        {% include header.html %}
     </head>
     <body>
        
-
-    
 
 
         <!-- <div class="container" align="justify">
@@ -59,13 +58,13 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" >
-                            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Retrieval</a></li>
+                            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Code Retrieval</a></li>
                         <li class="nav-item" >
-                            <a class="nav-link" id="retrieval-tab" data-toggle="tab" href="#retrieval" role="tab" aria-controls="retrieval" aria-selected="false">Summarization</a></li>
+                            <a class="nav-link" id="retrieval-tab" data-toggle="tab" href="#retrieval" role="tab" aria-controls="retrieval" aria-selected="false">Code Summarization</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" id="qa-tab" data-toggle="tab" href="#qa" role="tab" aria-controls="qa" aria-selected="false">Completion</a></li>
+                            <a class="nav-link" id="qa-tab" data-toggle="tab" href="#qa" role="tab" aria-controls="qa" aria-selected="false">Code Completion</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" id="caption-tab" data-toggle="tab" href="#caption" role="tab" aria-controls="caption" aria-selected="false">Type inference</a></li>
+                            <a class="nav-link" id="caption-tab" data-toggle="tab" href="#caption" role="tab" aria-controls="caption" aria-selected="false">Type Inference</a></li>
                     </ul>
 
                     <br/>
@@ -73,13 +72,10 @@
                         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="home-tab">
                             <p>MRR of our model and baseline methods for the task of code retrieval over CodeSearchNet dataset. (Best scores are in boldface.)</p>
                             <table class="table table-hover sortable  performanceTable">
-                                <col>
-                                <col>
-                                <col>
-                                <!-- <col> -->
-                                <colgroup span="4" class="wBackground"></colgroup>
+                            
+                                <!-- <colgroup span="4" class="wBackground"></colgroup>
                                 <colgroup span="4"></colgroup>
-                                <colgroup span="3" class="wBackground"></colgroup>
+                                <colgroup span="3" class="wBackground"></colgroup> -->
                             <thead>
                                 <!-- <tr>
                                 <th rowspan="2" >Rank</th>
@@ -310,17 +306,23 @@
                             <p>MRR of our model and baseline methods for the task of code completion over Py150 dataset. (Attr: attribute; Num: numeric constant; Name: variable, module; Func: function parameter name; Token: all tokens. Best scores are in boldface.)</p>
                             <table class="table table-hover sortable performanceTable">
                             <thead>
-                                <tr>
-                                <th class="sorttable_nosort" scope="col">Rank</th>
-                                <th class="sorttable_nosort" scope="col">Model</th>
+
+                                <tr class="firstHead">
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
+                                    <th colspan="5">Accuracy</th> 
+                                    <th colspan="1" rowspan="2" scope="col">Cost</th>
+                                </tr>
+
+                                <tr class="twoHead">
                                 <!-- <th scope="col">Ave-Rank</th> -->
                                 <th scope="col">Attr</th>
                                 <th scope="col">Num</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Param</th>
                                 <th scope="col">Token</th>
-                                <th scope="col">Cost</th>
                                 </tr>
+
                             </thead>
                             <tbody>
 
@@ -391,18 +393,26 @@
                             </table>
                         </div>
                         <div class="tab-pane fade" id="caption" role="tabpanel" aria-labelledby="caption-tab">
-                            <p>For video captioning tasks, we report CIDEr-D on each task. The models are ranked by the average of CIDEr-D scores across 3 tasks.</p>
+                            <p>Accuracy of our model and baseline methods for the task of type inference over Py150 dataset.</p>
                             <table class="table table-hover sortable performanceTable">
                             <thead>
-                                <tr>
-                                <th class="sorttable_nosort" scope="col">Rank</th>
-                                <th class="sorttable_nosort" scope="col">Model</th>
+
+                                <tr class="firstHead">
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Rank</th>
+                                    <th colspan="1" rowspan="2" class="sorttable_nosort" scope="col">Model</th>
+                                    <th colspan="2">All types</th> 
+                                    <th colspan="2">Any types</th> 
+                                    <th colspan="1" rowspan="2" scope="col">Cost</th>
+                                </tr>
+
+                                <tr class="twoHead">
                                 <!-- <th scope="col">Ave-Rank</th> -->
                                 <th scope="col">Acc@1</th>
                                 <th scope="col">Acc@5</th>
                                 <th scope="col">Acc@1</th>
                                 <th scope="col">Acc@5</th>
                                 </tr>
+
                             </thead>
                             <tbody>
                                 <tr>
@@ -417,10 +427,10 @@
                                     </td>
                                     <!-- <td><b></b></td> -->
                                     <td><b>0.52</b></td>
-
                                     <td><b>0.67</b></td>
                                     <td><b>0.43</b></td>
                                     <td><b>0.67</b></td>
+                                    <td><b>0.42s/B</b></td>
                                 </tr>
 
                                 <tr>
@@ -435,10 +445,11 @@
                                     </td>
                                     <!-- <td><b></b></td> -->
                                     <td><b>0.34</b></td>
-
                                     <td><b>0.64</b></td>
                                     <td><b>0.37</b></td>
                                     <td><b>0.75</b></td>
+
+                                    <td><b>0.85s/B</b></td>
                                 </tr>
                                 
                             </tbody>
